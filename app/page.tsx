@@ -37,146 +37,156 @@ const offers = [
   },
 ];
 
-const guides = [
-  "I’m 63 With $700K — Could Timing Create a Tax Mistake?",
-  "Roth Conversion Timing: What Retirees Often Miss",
-  "Do You Need a Financial Advisor Before You Retire?",
-  "Debt Consolidation: When It May Actually Help",
-  "Why Auto Insurance Rates Change More Than You Think",
-  "Retirement Planning Mistakes That Catch People Off Guard",
+const articles = [
+  { title: "I’m 63 With $700K — Could Timing Create a Tax Mistake?", slug: "63-700k-tax-mistake", category: "RETIREMENT" },
+  { title: "Roth Conversion Timing: What Retirees Often Miss", slug: "roth-conversion-timing", category: "TAXES" },
+  { title: "Do You Need a Financial Advisor Before You Retire?", slug: "need-financial-advisor-before-retire", category: "ADVISORS" },
+  { title: "RMDs and Retirement Taxes: What to Review", slug: "rmd-retirement-taxes", category: "RETIREMENT" },
+  { title: "Social Security Timing: What People Often Miss", slug: "social-security-timing", category: "RETIREMENT" },
+  { title: "Retirement Income Planning Mistakes That Catch People Off Guard", slug: "retirement-income-mistakes", category: "RETIREMENT" },
 ];
 
 export default function Home() {
+  const lead = articles[0];
+  const secondary = articles.slice(1, 3);
+  const more = articles.slice(3);
+
   return (
-    <main className="min-h-screen bg-[#f6f7f9] text-slate-950">
-      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
+    <main className="min-h-screen bg-[#f5f5f2] text-slate-950">
+      <header className="border-b border-slate-300 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <div className="flex items-center gap-8">
             <img src="/wslogo.png" alt="WalletSaint" className="h-14 w-auto" />
 
-            <nav className="hidden gap-5 text-sm font-medium text-slate-600 md:flex">
+            <nav className="hidden gap-5 text-sm font-semibold text-slate-700 md:flex">
               <span>Advisors</span>
               <span>Retirement</span>
               <span>Taxes</span>
               <span>Insurance</span>
               <span>Debt</span>
-              <span>Learn</span>
+              <span>Investing</span>
             </nav>
           </div>
 
-          <button className="rounded-xl bg-green-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-800">
+          <button className="rounded-md bg-green-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-green-800">
             Compare Options
           </button>
         </div>
       </header>
 
-      <section className="border-b border-slate-200 bg-gradient-to-b from-green-50 to-white">
-        <div className="mx-auto max-w-6xl px-5 py-16 text-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-            Personal finance decisions, simplified
+      <section className="border-b border-slate-300 bg-white">
+        <div className="mx-auto max-w-6xl px-5 py-12">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">
+            WalletSaint
           </p>
-
-          <h1 className="mx-auto max-w-3xl text-4xl font-extrabold tracking-tight md:text-5xl">
-            Compare Financial Options Before You Make a Decision
+          <h1 className="mt-2 max-w-4xl text-5xl font-black tracking-tight md:text-6xl">
+            Personal finance decisions, explained before you commit.
           </h1>
-
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
-            WalletSaint helps readers review advisor, retirement, tax, insurance,
-            debt, and investing decisions through clear guides and comparison tools.
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+            Retirement, advisor, tax, insurance, debt, and investing guides for readers comparing major financial choices.
           </p>
+        </div>
+      </section>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className="rounded-xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-sm">
+      <section className="mx-auto grid max-w-6xl gap-8 px-5 py-10 lg:grid-cols-[1.45fr_0.85fr]">
+        <a href={`/articles/${lead.slug}`} className="block border-b border-slate-300 pb-8 lg:border-b-0">
+          <div className="h-72 rounded-sm bg-gradient-to-br from-green-100 via-slate-100 to-white" />
+          <p className="mt-5 text-xs font-black uppercase tracking-[0.18em] text-green-700">
+            {lead.category}
+          </p>
+          <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight md:text-5xl">
+            {lead.title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
+            Timing, taxes, advisor comparisons, and retirement decisions can overlap in ways people often miss.
+          </p>
+          <p className="mt-5 text-sm font-bold text-green-700">Read the guide →</p>
+        </a>
+
+        <div className="space-y-6">
+          <h3 className="border-b border-slate-300 pb-3 mb-4 text-sm font-black uppercase tracking-[0.18em]">
+            Latest Guides
+          </h3>
+
+          {secondary.map((article) => (
+            <a key={article.slug} href={`/articles/${article.slug}`} className="block border-b border-slate-300 pb-6">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-green-700">
+                {article.category}
+              </p>
+              <h4 className="mt-2 text-2xl font-black leading-tight">
+                {article.title}
+              </h4>
+              <p className="mt-3 text-sm font-bold text-green-700">
+                Read more →
+              </p>
+            </a>
+          ))}
+
+          <div className="rounded-sm border border-slate-300 bg-white p-5">
+            <h4 className="text-lg font-black">Compare popular options</h4>
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              Start with the category you want to review.
+            </p>
+            <button className="mt-4 w-full rounded-md bg-slate-950 px-4 py-3 text-sm font-bold text-white">
               Find a Financial Advisor
-            </button>
-            <button className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900">
-              Compare Auto Insurance
-            </button>
-            <button className="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900">
-              Explore Debt Options
             </button>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="text-2xl font-bold">Compare Popular Options</h2>
-        <p className="mt-1 text-sm text-slate-600">
-          Start with the financial decision you want to review.
-        </p>
+      <section className="border-y border-slate-300 bg-white">
+        <div className="mx-auto max-w-6xl px-5 py-8">
+          <h2 className="text-2xl font-black">Compare Popular Options</h2>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {offers.map((offer) => (
-            <div
-              key={offer.title}
-              className={`rounded-2xl border border-slate-200 ${offer.accent} p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md`}
-            >
-              <h3 className="text-lg font-bold">{offer.title}</h3>
-              <p className="mt-2 min-h-16 text-sm leading-6 text-slate-600">
-                {offer.desc}
-              </p>
-              <div className="mt-5 text-sm font-bold text-slate-950">
-                {offer.cta} →
+          <div className="mt-6 grid gap-x-8 gap-y-2 md:grid-cols-3">
+            {offers.map((offer) => (
+              <div
+                key={offer.title}
+                className="group border-t border-slate-300 bg-white py-5 transition hover:border-green-700"
+              >
+                <h3 className="text-lg font-black group-hover:text-green-700">
+  {offer.title}
+</h3>
+<p className="mt-2 text-sm leading-6 text-slate-600">
+  {offer.desc}
+</p>
+<p className="mt-4 text-sm font-black text-green-700">
+  {offer.cta} →
+</p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-10">
+        <h2 className="border-b border-slate-300 pb-3 text-2xl font-black">
+          More From WalletSaint
+        </h2>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          {more.map((article) => (
+            <a key={article.slug} href={`/articles/${article.slug}`} className="block">
+              <div className="h-36 bg-gradient-to-br from-slate-200 to-green-50" />
+              <p className="mt-4 text-xs font-black uppercase tracking-[0.16em] text-green-700">
+                {article.category}
+              </p>
+              <h3 className="mt-2 text-xl font-black leading-tight">
+                {article.title}
+              </h3>
+              <p className="mt-3 text-sm font-bold text-green-700">
+                Read the guide →
+              </p>
+            </a>
           ))}
         </div>
       </section>
 
-     <section className="mx-auto max-w-6xl px-5 pb-12">
-  <h2 className="text-2xl font-bold">Featured Guides</h2>
-  <p className="mt-1 text-sm text-slate-600">
-    Professional guides and advertorial-style resources for common money decisions.
-  </p>
-
-  <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-    {[
-  { title: "I’m 63 With $700K — Could Timing Create a Tax Mistake?", slug: "63-700k-tax-mistake" },
-  { title: "Roth Conversion Timing: What Retirees Often Miss", slug: "roth-conversion-timing" },
-  { title: "Do You Need a Financial Advisor Before You Retire?", slug: "need-financial-advisor-before-retire" },
-  { title: "RMDs and Retirement Taxes: What to Review", slug: "rmd-retirement-taxes" },
-  { title: "Social Security Timing: What People Often Miss", slug: "social-security-timing" },
-  { title: "Retirement Income Planning Mistakes That Catch People Off Guard", slug: "retirement-income-mistakes" },
-].map((article) => (
-      <a
-        key={article.slug}
-        href={`/articles/${article.slug}`}
-        className="block"
-      >
-        <article className="min-h-[260px] rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
-          <div className="mb-4 h-28 rounded-xl bg-gradient-to-br from-green-100 to-slate-100" />
-          <h3 className="text-base font-bold leading-6">{article.title}</h3>
-          <p className="mt-3 text-sm font-bold text-green-700">
-            Read the guide →
-          </p>
-        </article>
-      </a>
-    ))}
-  </div>
-</section>
-
-      <section className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-4xl px-5 py-10 text-center">
-          <h2 className="text-2xl font-bold">
-            A Financial Resource Built for Real Decisions
-          </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-slate-600">
-            WalletSaint provides educational guides and comparison tools to help
-            readers better understand financial decisions before choosing
-            products, services, or professional advice.
-          </p>
-        </div>
-      </section>
-
-      <footer className="border-t border-slate-200 bg-slate-950 px-5 py-8 text-center text-xs leading-6 text-slate-400">
-        <div className="mx-auto max-w-4xl">
-          <p className="font-semibold text-white">WalletSaint</p>
-          <p className="mt-2">
-            WalletSaint is an educational and comparison platform. We may receive
-            compensation from partners featured on this site. Content is not
-            individualized financial, tax, or investment advice.
-          </p>
-        </div>
+      <footer className="border-t border-slate-300 bg-slate-950 px-5 py-8 text-center text-xs leading-6 text-slate-400">
+        <p className="font-bold text-white">WalletSaint</p>
+        <p className="mx-auto mt-2 max-w-4xl">
+          WalletSaint is an educational and comparison platform. We may receive compensation from partners featured on this site. Content is not individualized financial, tax, or investment advice.
+        </p>
       </footer>
     </main>
   );

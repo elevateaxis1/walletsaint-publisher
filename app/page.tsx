@@ -74,20 +74,53 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="border-b border-slate-300 bg-white">
+      <section className="border-b border-green-950 bg-[radial-gradient(circle_at_20%_20%,rgba(34,197,94,0.18),transparent_28%),radial-gradient(circle_at_80%_30%,rgba(16,185,129,0.14),transparent_26%),linear-gradient(135deg,#052e1b,#073b24_45%,#031f14)] text-white">
         <div className="mx-auto max-w-6xl px-5 py-12">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-green-700">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-emerald-300">
             WalletSaint
           </p>
-          <h1 className="mt-2 max-w-4xl text-5xl font-black tracking-tight md:text-6xl">
+          <h1 className="mt-2 max-w-4xl text-5xl font-black tracking-tight text-white md:text-6xl">
             Personal finance decisions, explained before you commit.
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-emerald-50/85">
             Retirement, advisor, tax, insurance, debt, and investing guides for readers comparing major financial choices.
           </p>
+<div className="mt-8 flex max-w-2xl items-center gap-3 rounded-2xl border border-white/15 bg-white/12 p-2 shadow-2xl backdrop-blur">
+  <input
+    type="text"
+    placeholder="What are you trying to figure out?"
+    className="flex-1 bg-transparent px-4 py-3 text-sm text-white outline-none placeholder:text-emerald-50/60"
+  />
+  <button className="rounded-xl bg-emerald-500 px-5 py-3 text-sm font-bold text-green-950 shadow-lg hover:bg-emerald-400">
+    Search
+  </button>
+</div>
         </div>
       </section>
+ <section className="border-b border-slate-200 bg-[#f4f7f3]">
+        <div className="mx-auto max-w-6xl px-5 pt-6 pb-10">
+          <h2 className="text-3xl font-black tracking-tight">Compare Popular Options</h2>
 
+          <div className="mt-6 grid gap-x-8 gap-y-2 md:grid-cols-3">
+            {offers.map((offer) => (
+              <div
+                key={offer.title}
+                className="group rounded-2xl border border-emerald-100 bg-gradient-to-br from-white to-emerald-50/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-emerald-300 hover:shadow-xl"
+              >
+                <h3 className="text-lg font-black text-slate-950 group-hover:text-green-700">
+  {offer.title}
+</h3>
+<p className="mt-2 text-sm leading-6 text-slate-600">
+  {offer.desc}
+</p>
+<p className="mt-5 text-sm font-black text-green-700">
+  {offer.cta} →
+</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="mx-auto grid max-w-6xl gap-8 px-5 py-10 lg:grid-cols-[1.45fr_0.85fr]">
         <a href={`/articles/${lead.slug}`} className="block border-b border-slate-300 pb-8 lg:border-b-0">
           <div className="h-72 rounded-sm bg-gradient-to-br from-green-100 via-slate-100 to-white" />
@@ -134,30 +167,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-slate-300 bg-white">
-        <div className="mx-auto max-w-6xl px-5 py-8">
-          <h2 className="text-2xl font-black">Compare Popular Options</h2>
-
-          <div className="mt-6 grid gap-x-8 gap-y-2 md:grid-cols-3">
-            {offers.map((offer) => (
-              <div
-                key={offer.title}
-                className="group border-t border-slate-300 bg-white py-5 transition hover:border-green-700"
-              >
-                <h3 className="text-lg font-black group-hover:text-green-700">
-  {offer.title}
-</h3>
-<p className="mt-2 text-sm leading-6 text-slate-600">
-  {offer.desc}
-</p>
-<p className="mt-4 text-sm font-black text-green-700">
-  {offer.cta} →
-</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       <section className="mx-auto max-w-6xl px-5 py-10">
         <h2 className="border-b border-slate-300 pb-3 text-2xl font-black">

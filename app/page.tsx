@@ -4,36 +4,42 @@ const offers = [
     desc: "Compare advisor options before making major retirement decisions.",
     cta: "Compare Advisors",
     accent: "bg-green-50",
+icon: "👤",
   },
   {
     title: "Retirement Planning",
     desc: "Review income, timing, tax, and withdrawal decisions before you commit.",
     cta: "Explore Retirement",
     accent: "bg-emerald-50",
+icon: "🏖️",
   },
   {
     title: "Tax Strategy",
     desc: "Understand where Roth conversions, RMDs, and timing may create tax surprises.",
     cta: "Review Tax Topics",
     accent: "bg-lime-50",
+icon: "%",
   },
   {
     title: "Auto Insurance",
     desc: "Compare available options before renewing your current policy.",
     cta: "Compare Rates",
     accent: "bg-sky-50",
+icon: "🚗",
   },
   {
     title: "Debt Consolidation",
     desc: "Explore ways to simplify payments and compare debt relief options.",
     cta: "See Options",
     accent: "bg-violet-50",
+icon: "💳",
   },
   {
     title: "Investing",
     desc: "Evaluate portfolio decisions, risk, income, and long-term planning.",
     cta: "Learn More",
     accent: "bg-slate-100",
+icon: "📈",
   },
 ];
 
@@ -74,8 +80,8 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="border-b border-green-950 bg-[radial-gradient(circle_at_15%_20%,rgba(34,197,94,0.12),transparent_30%),linear-gradient(135deg,#0b3d2e,#0e4a38_50%,#082c22)] text-white">
-  <div className="mx-auto grid max-w-6xl gap-8 px-5 py-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section className="relative overflow-hidden border-b border-green-950 bg-[radial-gradient(circle_at_18%_18%,rgba(74,222,128,0.18),transparent_26%),radial-gradient(circle_at_82%_35%,rgba(16,185,129,0.14),transparent_28%),linear-gradient(135deg,#0b3d2e,#0e4a38_48%,#082c22)] text-white before:absolute before:inset-0 before:bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_1px,transparent_1px)] before:bg-[length:34px_34px] before:opacity-[0.22] after:absolute after:inset-x-0 after:bottom-0 after:h-32 after:bg-gradient-to-t after:from-black/25 after:to-transparent">
+  <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:py-12 lg:grid-cols-[1fr_1fr] lg:items-center">
     <div>
       <p className="text-xs font-medium uppercase tracking-[0.18em] text-emerald-200/80">
   Built for real financial decisions
@@ -85,7 +91,7 @@ export default function Home() {
   WalletSaint
 </p>
 
-      <h1 className="mt-3 max-w-3xl text-4xl font-black tracking-tight text-white md:text-5xl">
+      <h1 className="mt-3 max-w-3xl text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
         Compare financial options before you make a costly mistake.
       </h1>
 
@@ -105,22 +111,22 @@ export default function Home() {
       </div>
     </div>
 
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="grid grid-cols-2 gap-3 sm:gap-4">
       {offers.map((offer) => (
         <div
           key={offer.title}
-          className="group rounded-2xl border border-white/5 bg-white/5 p-5 shadow-lg backdrop-blur transition hover:-translate-y-1 hover:bg-white/10"
+          className="group min-h-[150px] rounded-2xl border border-white/10 bg-emerald-700/25 p-4 shadow-[0_18px_45px_rgba(0,0,0,0.18)] backdrop-blur-md transition hover:-translate-y-1 hover:border-emerald-300/30 hover:bg-emerald-600/30 sm:min-h-[190px] sm:p-5"
         >
-          <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-lg">
-            →
-          </div>
-          <h3 className="text-lg font-black text-white">{offer.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-emerald-50/80">
-            {offer.desc}
-          </p>
-          <p className="mt-4 text-sm font-black text-emerald-300">
-            {offer.cta} →
-          </p>
+          <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg shadow-inner sm:h-11 sm:w-11">
+  {offer.icon}
+</div>
+          <h3 className="text-base font-black text-white sm:text-lg">{offer.title}</h3>
+          <p className="mt-2 hidden text-xs leading-5 text-emerald-50/80 sm:block sm:text-sm sm:leading-6">
+  {offer.desc}
+</p>
+          <p className="mt-4 text-xs font-black text-emerald-300 sm:text-sm">
+  {offer.cta} →
+</p>
         </div>
       ))}
     </div>

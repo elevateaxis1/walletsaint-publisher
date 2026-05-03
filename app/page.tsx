@@ -4,58 +4,151 @@ const offers = [
     desc: "Compare advisor options before making major retirement decisions.",
     cta: "Compare Advisors",
     accent: "bg-green-50",
-icon: "👤",
+icon: "advisor",
   },
   {
     title: "Retirement Planning",
     desc: "Review income, timing, tax, and withdrawal decisions before you commit.",
     cta: "Explore Retirement",
     accent: "bg-emerald-50",
-icon: "🏖️",
+icon: "retirement",
   },
   {
     title: "Tax Strategy",
     desc: "Understand where Roth conversions, RMDs, and timing may create tax surprises.",
     cta: "Review Tax Topics",
     accent: "bg-lime-50",
-icon: "%",
+icon: "tax",
   },
   {
     title: "Auto Insurance",
     desc: "Compare available options before renewing your current policy.",
     cta: "Compare Rates",
     accent: "bg-sky-50",
-icon: "🚗",
+icon: "insurance",
   },
   {
     title: "Debt Consolidation",
     desc: "Explore ways to simplify payments and compare debt relief options.",
     cta: "See Options",
     accent: "bg-violet-50",
-icon: "💳",
+icon: "debt",
   },
   {
     title: "Investing",
     desc: "Evaluate portfolio decisions, risk, income, and long-term planning.",
     cta: "Learn More",
     accent: "bg-slate-100",
-icon: "📈",
+icon: "investing",
   },
 ];
 
 const articles = [
-  { title: "I’m 63 With $700K — Could Timing Create a Tax Mistake?", slug: "63-700k-tax-mistake", category: "RETIREMENT" },
-  { title: "Roth Conversion Timing: What Retirees Often Miss", slug: "roth-conversion-timing", category: "TAXES" },
-  { title: "Do You Need a Financial Advisor Before You Retire?", slug: "need-financial-advisor-before-retire", category: "ADVISORS" },
-  { title: "RMDs and Retirement Taxes: What to Review", slug: "rmd-retirement-taxes", category: "RETIREMENT" },
-  { title: "Social Security Timing: What People Often Miss", slug: "social-security-timing", category: "RETIREMENT" },
-  { title: "Retirement Income Planning Mistakes That Catch People Off Guard", slug: "retirement-income-mistakes", category: "RETIREMENT" },
+  {
+    title: "I’m 63 With $700K — Could Timing Create a Tax Mistake?",
+    slug: "63-700k-tax-mistake",
+    category: "RETIREMENT",
+    image: "/articles/retirement-tax.jpg",
+  },
+  {
+    title: "Roth Conversion Timing: What Retirees Often Miss",
+    slug: "roth-conversion-timing",
+    category: "TAXES",
+    image: "/articles/roth-conversion.jpg",
+  },
+  {
+    title: "Do You Need a Financial Advisor Before You Retire?",
+    slug: "need-financial-advisor-before-retire",
+    category: "ADVISORS",
+    image: "/articles/financial-advisor.jpg",
+  },
+  {
+    title: "RMDs and Retirement Taxes: What to Review",
+    slug: "rmd-retirement-taxes",
+    category: "RETIREMENT",
+    image: "/articles/rmd-taxes.jpg",
+  },
+  {
+    title: "Social Security Timing: What People Often Miss",
+    slug: "social-security-timing",
+    category: "RETIREMENT",
+    image: "/articles/social-security.jpg",
+  },
+  {
+    title: "Retirement Income Planning Mistakes That Catch People Off Guard",
+    slug: "retirement-income-mistakes",
+    category: "RETIREMENT",
+    image: "/articles/retirement-income.jpg",
+  },
 ];
+function OfferIcon({ type }: { type: string }) {
+  const iconClass = "h-5 w-5 text-emerald-300";
 
+  if (type === "advisor") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
+        <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" strokeWidth="2" />
+        <path d="M4 21a8 8 0 0 1 16 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "retirement") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
+        <path d="M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M7 18c1-4 3-7 5-9 2 2 4 5 5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M12 9V4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <path d="M9 6h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  if (type === "tax") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
+        <path d="M7 17 17 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="8" cy="8" r="2" stroke="currentColor" strokeWidth="2" />
+        <circle cx="16" cy="16" r="2" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (type === "insurance") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
+        <path d="M4 13h16l-2-5H6l-2 5Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M6 13v4M18 13v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="8" cy="17" r="1.5" fill="currentColor" />
+        <circle cx="16" cy="17" r="1.5" fill="currentColor" />
+      </svg>
+    );
+  }
+
+  if (type === "debt") {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
+        <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="2" />
+        <path d="M4 10h16M7 15h5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
+      <path d="M5 19V9M12 19V5M19 19v-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <path d="M4 19h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
 export default function Home() {
   const lead = articles[0];
   const secondary = articles.slice(1, 3);
-  const more = articles.slice(3);
+  const more = [
+  articles[2],
+  articles[3],
+  articles[1],
+];
 
   return (
     <main className="min-h-screen bg-[#f5f5f2] text-slate-950">
@@ -118,7 +211,7 @@ export default function Home() {
           className="group min-h-[150px] rounded-2xl border border-white/10 bg-emerald-700/25 p-4 shadow-[0_18px_45px_rgba(0,0,0,0.18)] backdrop-blur-md transition hover:-translate-y-1 hover:border-emerald-300/30 hover:bg-emerald-600/30 sm:min-h-[190px] sm:p-5"
         >
           <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg shadow-inner sm:h-11 sm:w-11">
-  {offer.icon}
+  <OfferIcon type={offer.icon} />
 </div>
           <h3 className="text-base font-black text-white sm:text-lg">{offer.title}</h3>
           <p className="mt-2 hidden text-xs leading-5 text-emerald-50/80 sm:block sm:text-sm sm:leading-6">
@@ -135,7 +228,11 @@ export default function Home() {
 
    <section className="mx-auto grid max-w-6xl gap-10 px-5 py-10 lg:grid-cols-[1.45fr_0.85fr]">
   <a href={`/articles/${lead.slug}`} className="block">
-    <div className="h-72 rounded-2xl bg-gradient-to-br from-green-100 via-slate-100 to-white shadow-sm" />
+    <img
+  src={lead.image}
+  alt={lead.title}
+  className="h-72 w-full rounded-2xl object-cover shadow-sm"
+ />
     <p className="mt-5 text-xs font-black uppercase tracking-[0.18em] text-green-700">
       {lead.category}
     </p>
@@ -177,7 +274,11 @@ export default function Home() {
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           {more.map((article) => (
             <a key={article.slug} href={`/articles/${article.slug}`} className="block">
-              <div className="h-36 bg-gradient-to-br from-slate-200 to-green-50" />
+              <img
+  src={article.image}
+  alt={article.title}
+  className="h-36 w-full rounded-xl object-cover"
+/>
               <p className="mt-4 text-xs font-black uppercase tracking-[0.16em] text-green-700">
                 {article.category}
               </p>

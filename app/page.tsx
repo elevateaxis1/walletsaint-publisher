@@ -155,21 +155,28 @@ export default function Home() {
       <header className="border-b border-slate-300 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <div className="flex items-center gap-8">
-            <img src="/wslogo.png" alt="WalletSaint" className="h-14 w-auto" />
+  <img src="/wslogo.png" alt="WalletSaint" className="h-14 w-auto" />
 
-            <nav className="hidden gap-4 text-sm font-semibold text-slate-700 md:flex">
-              <span>Advisors</span>
-              <span>Retirement</span>
-              <span>Taxes</span>
-              <span>Insurance</span>
-              <span>Debt</span>
-              <span>Investing</span>
-            </nav>
-          </div>
+  <nav className="hidden gap-4 text-sm font-semibold text-slate-700 md:flex">
+    <span>Advisors</span>
+    <span>Retirement</span>
+    <span>Taxes</span>
+    <span>Insurance</span>
+    <span>Debt</span>
+    <span>Investing</span>
+  </nav>
+</div>
 
-          <button className="rounded-md bg-green-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-green-800">
-            Compare Options
-          </button>
+<button
+  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm md:hidden"
+  aria-label="Open menu"
+>
+  <span className="block h-0.5 w-6 rounded-full bg-slate-800 before:block before:h-0.5 before:w-6 before:-translate-y-2 before:rounded-full before:bg-slate-800 before:content-[''] after:block after:h-0.5 after:w-6 after:translate-y-1.5 after:rounded-full after:bg-slate-800 after:content-['']" />
+</button>
+
+<button className="hidden rounded-md bg-green-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-green-800 md:block">
+  Compare Options
+</button>
         </div>
       </header>
 

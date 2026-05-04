@@ -271,7 +271,82 @@ export default function Home() {
       </a>
     ))}
   </div>
-</section>  
+</section>
+
+<section className="border-y border-slate-200 bg-white">
+  <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+    <div>
+      <p className="text-sm font-black uppercase tracking-[0.18em] text-green-700">
+        Why Trust WalletSaint
+      </p>
+      <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight text-slate-950">
+        Built to make financial decisions easier to compare.
+      </h2>
+      <p className="mt-5 text-base leading-7 text-slate-600">
+  WalletSaint helps readers compare financial options across advisors, retirement strategies, taxes, insurance, debt, and investing. We focus on making complex decisions easier to evaluate before choosing a provider, product, or plan.
+</p>
+    </div>
+
+    <div className="grid gap-4 sm:grid-cols-3">
+      <div className="rounded-2xl border border-green-100 bg-green-50 p-5">
+        <p className="text-3xl font-black text-green-800">6+</p>
+        <p className="mt-2 text-sm font-bold leading-6 text-slate-600">
+          Financial categories covered
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-green-100 bg-green-50 p-5">
+        <p className="text-3xl font-black text-green-800">Clear</p>
+        <p className="mt-2 text-sm font-bold leading-6 text-slate-600">
+          Educational comparison content
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-green-100 bg-green-50 p-5">
+        <p className="text-3xl font-black text-green-800">No</p>
+        <p className="mt-2 text-sm font-bold leading-6 text-slate-600">
+          Individualized financial advice
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className="mx-auto max-w-6xl px-5 py-10">
+  <div className="overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#0b3d2e,#0e4a38_55%,#082c22)] p-6 text-white shadow-2xl md:p-8">
+    <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+      <div>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-300">
+          Start comparing smarter
+        </p>
+        <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">
+          Review your options before making a financial move.
+        </h2>
+        <p className="mt-4 max-w-2xl text-sm leading-7 text-emerald-50/85">
+          Explore advisor comparisons, retirement planning topics, tax strategy questions, insurance options, debt decisions, and investing guides in one place.
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
+        <p className="text-sm font-bold text-emerald-100">
+          What are you comparing?
+        </p>
+
+        <div className="mt-4 grid gap-3">
+          <button className="rounded-xl bg-white px-4 py-3 text-left text-sm font-black text-green-900">
+            Financial Advisors →
+          </button>
+          <button className="rounded-xl bg-white/90 px-4 py-3 text-left text-sm font-black text-green-900">
+            Retirement Planning →
+          </button>
+          <button className="rounded-xl bg-white/80 px-4 py-3 text-left text-sm font-black text-green-900">
+            Auto Insurance →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="mx-auto max-w-6xl px-5 py-10">
         <h2 className="border-b border-slate-300 pb-3 text-2xl font-black">

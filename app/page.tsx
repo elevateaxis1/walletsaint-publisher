@@ -375,12 +375,58 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-slate-300 bg-slate-950 px-5 py-8 text-center text-xs leading-6 text-slate-400">
-        <p className="font-bold text-white">WalletSaint</p>
-        <p className="mx-auto mt-2 max-w-4xl">
-          WalletSaint is an educational and comparison platform. We may receive compensation from partners featured on this site. Content is not individualized financial, tax, or investment advice.
-        </p>
-      </footer>
+      <footer className="border-t border-slate-300 bg-slate-950 px-5 py-12 text-slate-400">
+  <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
+
+    {/* Brand */}
+    <div>
+      <p className="text-lg font-black text-white">WalletSaint</p>
+      <p className="mt-3 text-sm leading-6">
+        Compare financial options across advisors, retirement strategies, tax planning, insurance, debt, and investing before making decisions.
+      </p>
+    </div>
+
+    {/* Categories */}
+    <div>
+      <p className="text-sm font-bold text-white">Categories</p>
+      <ul className="mt-3 space-y-2 text-sm">
+        <li>Advisors</li>
+        <li>Retirement</li>
+        <li>Taxes</li>
+        <li>Insurance</li>
+        <li>Debt</li>
+        <li>Investing</li>
+      </ul>
+    </div>
+
+    {/* Resources */}
+    <div>
+      <p className="text-sm font-bold text-white">Resources</p>
+      <ul className="mt-3 space-y-2 text-sm">
+        <li>Financial Guides</li>
+        <li>Comparison Tools</li>
+        <li>Editorial Content</li>
+      </ul>
+    </div>
+
+    {/* Legal */}
+    <div>
+      <p className="text-sm font-bold text-white">Legal</p>
+      <ul className="mt-3 space-y-2 text-sm">
+        <li>Privacy Policy</li>
+        <li>Terms of Use</li>
+        <li>Advertiser Disclosure</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div className="mx-auto mt-10 max-w-6xl border-t border-slate-700 pt-6 text-xs leading-6 text-slate-500">
+    <p>
+      WalletSaint is an educational and comparison platform. We may receive compensation from partners featured on this site. Content is not individualized financial, tax, legal, or investment advice.
+    </p>
+  </div>
+</footer>
     </main>
   );
 }

@@ -97,8 +97,8 @@ export default async function FunnelPage({
               <p>✓ Built for retirement and tax planning decisions</p>
             </div>
           </div>
-<div className="-mt-1 lg:mt-0"> </div>
-          <div className="rounded-[2rem] border border-white/10 bg-white p-5 text-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.35)] md:p-7 lg:mt-0">
+
+          <div className="-mt-1 rounded-[2rem] border border-white/10 bg-white p-5 text-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.35)] md:p-7 lg:mt-0">
             <p className="text-xs font-black uppercase tracking-[0.20em] text-green-700">
               Let’s get started
             </p>

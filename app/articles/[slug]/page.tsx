@@ -25,7 +25,7 @@ export default async function ArticlePage({
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <a href="/" className="flex items-center">
-            <img src="/wslogo.png" alt="WalletSaint" className="h-12 w-auto" />
+            <img src="/partners/walletsaint-logo-2026.png" alt="WalletSaint" className="h-12 w-auto" />
           </a>
 
           <div className="hidden items-center gap-6 text-sm font-bold text-slate-700 md:flex">
@@ -196,19 +196,20 @@ export default async function ArticlePage({
         </aside>
       </section>
 
-      {/* Footer */}
+                  {/* Footer */}
       <footer className="bg-[#101a14] px-5 py-14 text-slate-400">
         <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr_1.2fr]">
           <div>
-            <p className="text-3xl font-black text-white">
-              <span className="text-green-500">Wallet</span>Saint
-            </p>
+            <img
+              src="/partners/walletsaint-logo-2026.png"
+              alt="WalletSaint"
+              className="h-10 w-auto"
+            />
+
             <p className="mt-6 text-sm leading-7">
-              WalletSaint Media LLC
+              WalletSaint
               <br />
               Educational finance publisher
-              <br />
-              Tampa Bay, FL
             </p>
           </div>
 
@@ -217,7 +218,11 @@ export default async function ArticlePage({
             <ul className="mt-5 space-y-3 text-sm">
               <li>About Us</li>
               <li>Editorial Guidelines</li>
-              <li>Advertiser Disclosure</li>
+              <li>
+                <a href="/advertiser-disclosure" className="hover:text-slate-300">
+                  Advertiser Disclosure
+                </a>
+              </li>
               <li>Contact Us</li>
             </ul>
           </div>
@@ -225,8 +230,16 @@ export default async function ArticlePage({
           <div>
             <p className="font-black text-white">Legal</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li>Privacy Policy</li>
-              <li>Terms of Use</li>
+              <li>
+                <a href="/privacy" className="hover:text-slate-300">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/terms" className="hover:text-slate-300">
+                  Terms of Use
+                </a>
+              </li>
               <li>Cookie Policy</li>
               <li>Accessibility Statement</li>
             </ul>
@@ -235,16 +248,30 @@ export default async function ArticlePage({
           <div>
             <p className="font-black text-white">About us</p>
             <p className="mt-5 text-sm leading-7">
-              WalletSaint helps readers compare financial topics, advisor options, retirement questions, tax considerations, insurance, debt, and investing decisions before choosing a provider, product, or plan.
+              WalletSaint helps readers compare financial topics, advisor options,
+              retirement questions, tax considerations, insurance, debt, and
+              investing decisions before choosing a provider, product, or plan.
             </p>
           </div>
         </div>
 
         <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 pt-8 text-center text-xs text-slate-500">
           <p>
-            Privacy Policy · Terms of Use · How We Make Money · Do Not Sell or Share My Personal Information · Editorial Guidelines · About Us · Contact Us
+            <a href="/privacy" className="hover:text-slate-300">
+              Privacy Policy
+            </a>{" "}
+            ·{" "}
+            <a href="/terms" className="hover:text-slate-300">
+              Terms of Use
+            </a>{" "}
+            ·{" "}
+            <a href="/advertiser-disclosure" className="hover:text-slate-300">
+              Advertiser Disclosure
+            </a>{" "}
+            · Editorial Guidelines · About Us · Contact Us
           </p>
-          <p className="mt-6">© 2026 WalletSaint Media LLC. All Rights Reserved.</p>
+
+          <p className="mt-6">© 2026 WalletSaint. All Rights Reserved.</p>
         </div>
       </footer>
     </main>

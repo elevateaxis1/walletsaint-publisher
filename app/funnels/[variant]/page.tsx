@@ -51,7 +51,7 @@ export default async function FunnelPage({
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <a href="/" className="flex items-center">
-            <img src="/wslogo.png" alt="WalletSaint" className="h-12 w-auto" />
+            <img src="/partners/walletsaint-logo-2026.png" alt="WalletSaint" className="h-12 w-auto" />
           </a>
 
           {funnel.logo && (
@@ -162,8 +162,19 @@ export default async function FunnelPage({
 
           <div className="mt-8 border-t border-slate-700 pt-6 text-xs leading-6 text-slate-500">
             <p>
-              © WalletSaint. Privacy Policy · Terms of Use · Advertiser Disclosure
-            </p>
+  © WalletSaint.{" "}
+  <a href="/privacy" className="hover:text-slate-300">
+    Privacy Policy
+  </a>{" "}
+  ·{" "}
+  <a href="/terms" className="hover:text-slate-300">
+    Terms of Use
+  </a>{" "}
+  ·{" "}
+  <a href="/advertiser-disclosure" className="hover:text-slate-300">
+    Advertiser Disclosure
+  </a>
+</p>
           </div>
         </div>
       </footer>

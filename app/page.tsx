@@ -155,7 +155,7 @@ export default function Home() {
       <header className="border-b border-slate-300 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <div className="flex items-center gap-8">
-  <img src="/wslogo.png" alt="WalletSaint" className="h-14 w-auto" />
+  <img src="/partners/walletsaint-logo-2026.png" alt="WalletSaint" className="h-14 w-auto" />
 
   <nav className="hidden gap-4 text-sm font-semibold text-slate-700 md:flex">
     <span>Advisors</span>
@@ -413,9 +413,21 @@ export default function Home() {
     <div>
       <p className="text-sm font-bold text-white">Legal</p>
       <ul className="mt-3 space-y-2 text-sm">
-        <li>Privacy Policy</li>
-        <li>Terms of Use</li>
-        <li>Advertiser Disclosure</li>
+        <li>
+  <a href="/privacy" className="hover:text-white">
+    Privacy Policy
+  </a>
+</li>
+<li>
+  <a href="/terms" className="hover:text-white">
+    Terms of Use
+  </a>
+</li>
+<li>
+  <a href="/advertiser-disclosure" className="hover:text-white">
+    Advertiser Disclosure
+  </a>
+</li>
       </ul>
     </div>
 

@@ -5,21 +5,22 @@ const trackingUrl = "https://link.walletsaint.com/click";
 export default function FinanceAdvisorsRmdQuizPage() {
   return (
     <main className="min-h-screen bg-white text-slate-950">
-      <header className="bg-[#0b3d2e] px-4 py-4 text-white">
-        <div className="mx-auto flex max-w-5xl items-center justify-center gap-4">
+                              <header className="border-b border-slate-200 bg-white px-5 py-3 shadow-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-start gap-4">
           <img
             src="/partners/walletsaint-logo-2026.png"
             alt="WalletSaint"
-            className="h-8 w-auto rounded-md bg-white px-3 py-1.5 shadow-sm"
+            className="h-10 w-auto object-contain"
           />
-          <span className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-100/80">
-            +
-          </span>
-          <img
-            src="/partners/finance-advisors-logo.png"
-            alt="Finance Advisors"
-            className="h-8 w-auto max-w-[190px] rounded-md bg-slate-950 px-3 py-1.5 object-contain shadow-sm"
-          />
+
+          <span className="text-xl font-semibold text-slate-950">+</span>
+
+          <div className="flex h-8 items-center rounded-md bg-[#050817] px-3 shadow-sm">
+            <span className="font-serif text-[18px] font-bold leading-none text-white">
+              Finance{" "}
+              <span className="text-[#ef3f4c]">Advisors</span>
+            </span>
+          </div>
         </div>
       </header>
 

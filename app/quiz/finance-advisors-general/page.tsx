@@ -1,3 +1,5 @@
+import VoluumTracking from "../../components/VoluumTracking";
+
 const answerOptions = ["11+", "6-10", "2-5", "Less Than 2", "Already retired"];
 
 const trackingUrl = "https://link.walletsaint.com/click";
@@ -5,6 +7,7 @@ const trackingUrl = "https://link.walletsaint.com/click";
 export default function FinanceAdvisorsRmdQuizPage() {
   return (
     <main className="min-h-screen bg-white text-slate-950">
+      <VoluumTracking />
                               <header className="border-b border-slate-200 bg-white px-5 py-3 shadow-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-start gap-4">
           <img

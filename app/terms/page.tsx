@@ -19,8 +19,8 @@ export default function TermsPage() {
       <p>
         WalletSaint is an educational and comparison platform. Content provided
         on this website is intended for informational purposes only and should
-        not be considered individualized financial, investment, tax, legal, or
-        insurance advice.
+        not be considered individualized financial, investment, tax, or legal
+        advice.
       </p>
 
       <p>
@@ -38,8 +38,8 @@ export default function TermsPage() {
       </p>
 
       <p>
-        Any financial advisor, investment professional, insurance provider, or
-        third-party service provider introduced through WalletSaint operates
+        Any financial advisor, investment professional, or third-party service
+        provider introduced through WalletSaint operates
         independently and may have separate terms, disclosures, qualifications,
         licensing requirements, and compensation structures.
       </p>
@@ -75,8 +75,6 @@ export default function TermsPage() {
         <li>Financial outcomes</li>
         <li>Tax savings</li>
         <li>Retirement outcomes</li>
-        <li>Insurance results</li>
-        <li>Debt reduction outcomes</li>
         <li>Accuracy or completeness of third-party information</li>
       </ul>
 
@@ -89,7 +87,7 @@ export default function TermsPage() {
 
       <p>
         Users are responsible for evaluating any financial, investment,
-        insurance, retirement, tax, or legal decision independently and should
+        retirement, tax, or legal decision independently and should
         consult qualified professionals before making financial decisions.
       </p>
 

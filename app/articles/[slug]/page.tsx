@@ -1,4 +1,6 @@
 import { articles } from "@/data/articles";
+import { corporateLinks } from "@/data/corporateLinks";
+import Link from "next/link";
 
 export default async function ArticlePage({
   params,
@@ -24,20 +26,22 @@ export default async function ArticlePage({
       {/* Header */}
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <img src="/partners/walletsaint-logo-2026.png" alt="WalletSaint" className="h-12 w-auto" />
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-6 text-sm font-bold text-slate-700 md:flex">
-            <a href="/">Home</a>
-            <a href="/funnels/advisors">Advisors</a>
-            <a href="/funnels/advisors-rmd">Retirement</a>
-            <span className="text-green-700">Advertiser Disclosure</span>
+            <Link href="/">Home</Link>
+            <a href={corporateLinks.advisors}>Advisors</a>
+            <a href={corporateLinks.retirement}>Retirement</a>
+            <Link href="/advertiser-disclosure" className="text-green-700">
+              Advertiser Disclosure
+            </Link>
           </div>
 
-          <a href="/" className="text-sm font-bold text-green-700 md:hidden">
+          <Link href="/" className="text-sm font-bold text-green-700 md:hidden">
             Back
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -59,7 +63,7 @@ export default async function ArticlePage({
             <span>
               Written by <span className="font-black text-white">WalletSaint Editorial Team</span>
             </span>
-            <span>Updated May 2026</span>
+            <span>Updated September 2026</span>
             <span className="rounded-full bg-white/10 px-3 py-1 font-bold text-white">
               {article.category}
             </span>
@@ -135,14 +139,14 @@ export default async function ArticlePage({
           <div>
             <div className="mb-4 flex items-center justify-between">
               <h2 className="text-2xl font-black">Other Articles</h2>
-              <a href="/" className="text-sm font-bold text-green-700">
+              <Link href="/" className="text-sm font-bold text-green-700">
                 View All →
-              </a>
+              </Link>
             </div>
 
             <div className="space-y-4">
               {related.map((item) => (
-                <a key={item.slug} href={`/articles/${item.slug}`} className="grid grid-cols-[110px_1fr] gap-4 rounded-2xl bg-white p-3 shadow-sm">
+                <Link key={item.slug} href={`/articles/${item.slug}`} className="grid grid-cols-[110px_1fr] gap-4 rounded-2xl bg-white p-3 shadow-sm">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -155,9 +159,9 @@ export default async function ArticlePage({
                     <h3 className="mt-1 text-sm font-black leading-tight">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-xs text-slate-500">May 2026</p>
+                    <p className="mt-2 text-xs text-slate-500">September 2026</p>
                   </div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -180,7 +184,7 @@ export default async function ArticlePage({
             </p>
 
             <a
-              href="/funnels/advisors"
+              href={corporateLinks.advisors}
               className="mt-5 inline-flex w-full justify-center rounded-2xl bg-emerald-500 px-5 py-4 text-sm font-black text-green-950"
             >
               Compare Options →
@@ -214,16 +218,13 @@ export default async function ArticlePage({
           </div>
 
           <div>
-            <p className="font-black text-white">Company</p>
+            <p className="font-black text-white">Disclosures</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li>About Us</li>
-              <li>Editorial Guidelines</li>
               <li>
-                <a href="/advertiser-disclosure" className="hover:text-slate-300">
+                <Link href="/advertiser-disclosure" className="hover:text-slate-300">
                   Advertiser Disclosure
-                </a>
+                </Link>
               </li>
-              <li>Contact Us</li>
             </ul>
           </div>
 
@@ -231,44 +232,41 @@ export default async function ArticlePage({
             <p className="font-black text-white">Legal</p>
             <ul className="mt-5 space-y-3 text-sm">
               <li>
-                <a href="/privacy" className="hover:text-slate-300">
+                <Link href="/privacy" className="hover:text-slate-300">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms" className="hover:text-slate-300">
+                <Link href="/terms" className="hover:text-slate-300">
                   Terms of Use
-                </a>
+                </Link>
               </li>
-              <li>Cookie Policy</li>
-              <li>Accessibility Statement</li>
             </ul>
           </div>
 
           <div>
             <p className="font-black text-white">About us</p>
             <p className="mt-5 text-sm leading-7">
-              WalletSaint helps readers compare financial topics, advisor options,
-              retirement questions, tax considerations, insurance, debt, and
-              investing decisions before choosing a provider, product, or plan.
+              WalletSaint helps readers compare financial advisor options,
+              retirement questions, and tax-aware planning considerations before
+              choosing a provider or planning approach.
             </p>
           </div>
         </div>
 
         <div className="mx-auto mt-12 max-w-6xl border-t border-white/10 pt-8 text-center text-xs text-slate-500">
           <p>
-            <a href="/privacy" className="hover:text-slate-300">
+            <Link href="/privacy" className="hover:text-slate-300">
               Privacy Policy
-            </a>{" "}
+            </Link>{" "}
             ·{" "}
-            <a href="/terms" className="hover:text-slate-300">
+            <Link href="/terms" className="hover:text-slate-300">
               Terms of Use
-            </a>{" "}
+            </Link>{" "}
             ·{" "}
-            <a href="/advertiser-disclosure" className="hover:text-slate-300">
+            <Link href="/advertiser-disclosure" className="hover:text-slate-300">
               Advertiser Disclosure
-            </a>{" "}
-            · Editorial Guidelines · About Us · Contact Us
+            </Link>
           </p>
 
           <p className="mt-6">© 2026 WalletSaint. All Rights Reserved.</p>

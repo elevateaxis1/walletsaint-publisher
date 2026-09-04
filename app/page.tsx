@@ -1,45 +1,32 @@
-const offers = [
+import { corporateLinks } from "@/data/corporateLinks";
+
+const focusAreas = [
   {
+    number: "01",
     title: "Financial Advisors",
-    desc: "Compare advisor options before making major retirement decisions.",
-    cta: "Compare Advisors",
-    accent: "bg-green-50",
-icon: "advisor",
+    description:
+      "Understand what to compare before choosing an advisor for retirement, investments, or long-term planning.",
+    label: "Advisor comparison",
+    icon: "advisor",
+    href: corporateLinks.advisors,
   },
   {
+    number: "02",
     title: "Retirement Planning",
-    desc: "Review income, timing, tax, and withdrawal decisions before you commit.",
-    cta: "Explore Retirement",
-    accent: "bg-emerald-50",
-icon: "retirement",
+    description:
+      "Review income, withdrawal timing, Social Security, and other decisions that shape retirement.",
+    label: "Retirement decisions",
+    icon: "retirement",
+    href: corporateLinks.retirement,
   },
   {
-    title: "Tax Strategy",
-    desc: "Understand where Roth conversions, RMDs, and timing may create tax surprises.",
-    cta: "Review Tax Topics",
-    accent: "bg-lime-50",
-icon: "tax",
-  },
-  {
-    title: "Auto Insurance",
-    desc: "Compare available options before renewing your current policy.",
-    cta: "Compare Rates",
-    accent: "bg-sky-50",
-icon: "insurance",
-  },
-  {
-    title: "Debt Consolidation",
-    desc: "Explore ways to simplify payments and compare debt relief options.",
-    cta: "See Options",
-    accent: "bg-violet-50",
-icon: "debt",
-  },
-  {
-    title: "Investing",
-    desc: "Evaluate portfolio decisions, risk, income, and long-term planning.",
-    cta: "Learn More",
-    accent: "bg-slate-100",
-icon: "investing",
+    number: "03",
+    title: "Tax-Aware Planning",
+    description:
+      "Learn how Roth conversions, RMDs, and income timing can affect the questions you bring to a professional.",
+    label: "Tax considerations",
+    icon: "tax",
+    href: corporateLinks.taxPlanning,
   },
 ];
 
@@ -68,377 +55,302 @@ const articles = [
     category: "RETIREMENT",
     image: "/articles/rmd-taxes.jpg",
   },
-  {
-    title: "Social Security Timing: What People Often Miss",
-    slug: "social-security-timing",
-    category: "RETIREMENT",
-    image: "/articles/social-security.jpg",
-  },
-  {
-    title: "Retirement Income Planning Mistakes That Catch People Off Guard",
-    slug: "retirement-income-mistakes",
-    category: "RETIREMENT",
-    image: "/articles/retirement-income.jpg",
-  },
 ];
-function OfferIcon({ type }: { type: string }) {
-  const iconClass = "h-5 w-5 text-emerald-300";
+
+function FocusIcon({ type }: { type: string }) {
+  const iconClass = "h-6 w-6 text-emerald-700";
 
   if (type === "advisor") {
     return (
-      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
-        <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" strokeWidth="2" />
-        <path d="M4 21a8 8 0 0 1 16 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <svg viewBox="0 0 24 24" fill="none" className={iconClass} aria-hidden="true">
+        <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M4 21a8 8 0 0 1 16 0" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     );
   }
 
   if (type === "retirement") {
     return (
-      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
-        <path d="M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M7 18c1-4 3-7 5-9 2 2 4 5 5 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M12 9V4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <path d="M9 6h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    );
-  }
-
-  if (type === "tax") {
-    return (
-      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
-        <path d="M7 17 17 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="8" cy="8" r="2" stroke="currentColor" strokeWidth="2" />
-        <circle cx="16" cy="16" r="2" stroke="currentColor" strokeWidth="2" />
-      </svg>
-    );
-  }
-
-  if (type === "insurance") {
-    return (
-      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
-        <path d="M4 13h16l-2-5H6l-2 5Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-        <path d="M6 13v4M18 13v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="8" cy="17" r="1.5" fill="currentColor" />
-        <circle cx="16" cy="17" r="1.5" fill="currentColor" />
-      </svg>
-    );
-  }
-
-  if (type === "debt") {
-    return (
-      <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
-        <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="2" />
-        <path d="M4 10h16M7 15h5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <svg viewBox="0 0 24 24" fill="none" className={iconClass} aria-hidden="true">
+        <path d="M4 19h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M7 19c1-4 3-7 5-9 2 2 4 5 5 9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M12 10V4M9 6h6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     );
   }
 
   return (
-    <svg viewBox="0 0 24 24" fill="none" className={iconClass}>
-      <path d="M5 19V9M12 19V5M19 19v-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <path d="M4 19h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <svg viewBox="0 0 24 24" fill="none" className={iconClass} aria-hidden="true">
+      <path d="M7 17 17 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="8" cy="8" r="2" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="16" cy="16" r="2" stroke="currentColor" strokeWidth="1.8" />
     </svg>
   );
 }
+
 export default function Home() {
   const lead = articles[0];
   const secondary = articles.slice(1, 3);
-  const more = [
-  articles[2],
-  articles[3],
-  articles[1],
-];
+  const more = [articles[2], articles[3], articles[1]];
 
   return (
-    <main className="min-h-screen bg-[#f5f5f2] text-slate-950">
-      <header className="border-b border-slate-300 bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-          <div className="flex items-center gap-8">
-  <img src="/partners/walletsaint-logo-2026.png" alt="WalletSaint" className="h-14 w-auto" />
+    <main className="min-h-screen bg-[#f4f5f0] text-[#13251d]">
+      <header className="border-b border-[#d9dfd7] bg-[#fbfcf9]">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+          <div className="flex items-center gap-10">
+            <img
+              src="/partners/walletsaint-logo-2026.png"
+              alt="WalletSaint"
+              className="h-11 w-auto sm:h-12"
+            />
+            <nav aria-label="Primary" className="hidden items-center gap-7 text-sm font-semibold text-slate-600 lg:flex">
+              <span>Advisors</span>
+              <span>Retirement</span>
+              <span>Tax Planning</span>
+              <span>Financial Guides</span>
+            </nav>
+          </div>
 
-  <nav className="hidden gap-4 text-sm font-semibold text-slate-700 md:flex">
-    <span>Advisors</span>
-    <span>Retirement</span>
-    <span>Taxes</span>
-    <span>Insurance</span>
-    <span>Debt</span>
-    <span>Investing</span>
-  </nav>
-</div>
+          <a href={corporateLinks.advisors} className="hidden rounded-full bg-[#087443] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#075f38] md:block">
+            Compare Advisor Options
+          </a>
 
-<button
-  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white shadow-sm md:hidden"
-  aria-label="Open menu"
->
-  <span className="block h-0.5 w-6 rounded-full bg-slate-800 before:block before:h-0.5 before:w-6 before:-translate-y-2 before:rounded-full before:bg-slate-800 before:content-[''] after:block after:h-0.5 after:w-6 after:translate-y-1.5 after:rounded-full after:bg-slate-800 after:content-['']" />
-</button>
-
-<button className="hidden rounded-md bg-green-700 px-5 py-2.5 text-sm font-bold text-white hover:bg-green-800 md:block">
-  Compare Options
-</button>
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#ccd5ce] bg-white lg:hidden" aria-hidden="true">
+            <span className="text-xl font-semibold text-[#164b35]">WS</span>
+          </div>
         </div>
       </header>
 
-      <section className="relative overflow-hidden border-b border-green-950 bg-[radial-gradient(circle_at_18%_18%,rgba(74,222,128,0.18),transparent_26%),radial-gradient(circle_at_82%_35%,rgba(16,185,129,0.14),transparent_28%),linear-gradient(135deg,#0b3d2e,#0e4a38_48%,#082c22)] text-white before:absolute before:inset-0 before:bg-[linear-gradient(135deg,rgba(255,255,255,0.08)_1px,transparent_1px)] before:bg-[length:34px_34px] before:opacity-[0.22] after:absolute after:inset-x-0 after:bottom-0 after:h-32 after:bg-gradient-to-t after:from-black/25 after:to-transparent">
-  <div className="relative z-10 mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:py-12 lg:grid-cols-[1fr_1fr] lg:items-center">
-    <div>
-      <p className="text-xs font-medium uppercase tracking-[0.18em] text-emerald-200/80">
-  Built for real financial decisions
-</p>
+      <section className="relative overflow-hidden bg-[#0a3b2a] text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,rgba(52,211,153,0.22),transparent_28%),radial-gradient(circle_at_8%_88%,rgba(34,197,94,0.12),transparent_32%)]" />
+        <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.7)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.7)_1px,transparent_1px)] [background-size:48px_48px]" />
 
-<p className="mt-3 text-xs font-bold uppercase tracking-[0.22em] text-emerald-300">
-  WalletSaint
-</p>
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-24">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/25 bg-white/8 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-emerald-200">
+              <span className="h-2 w-2 rounded-full bg-emerald-300" />
+              Financial decisions, made clearer
+            </div>
 
-      <h1 className="mt-3 max-w-3xl text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
-        Compare financial options before you make a costly mistake.
-      </h1>
+            <h1 className="mt-7 max-w-3xl text-5xl font-black leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-[4.65rem]">
+              Make your next financial decision with better questions.
+            </h1>
 
-      <p className="mt-5 max-w-2xl text-lg leading-8 text-emerald-50/85">
-        WalletSaint helps you compare advisors, retirement strategies, tax moves, insurance, and debt options before choosing a provider, product, or plan.
-      </p>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-emerald-50/80 sm:text-xl">
+              WalletSaint helps people understand advisor choices, retirement decisions, and tax-aware planning before choosing a path forward.
+            </p>
 
-      <div className="mt-8 flex max-w-2xl items-center gap-3 rounded-2xl border border-white/15 bg-white/12 p-2 shadow-2xl backdrop-blur">
-        <input
-          type="text"
-          placeholder="Search articles, topics, and financial tools..."
-          className="flex-1 bg-transparent px-4 py-2.5 text-sm text-white outline-none placeholder:text-emerald-50/60"
-        />
-        <button className="rounded-xl bg-emerald-500 px-5 py-3 text-sm font-bold text-green-950 shadow-lg hover:bg-emerald-400">
-          Search
-        </button>
-      </div>
-    </div>
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <a href={corporateLinks.advisors} className="rounded-full bg-emerald-400 px-6 py-3.5 text-sm font-black text-[#073523] shadow-[0_12px_30px_rgba(16,185,129,0.24)] transition hover:bg-emerald-300">
+                Compare Advisor Options
+              </a>
+              <span className="px-2 text-sm font-semibold text-emerald-100/75">
+                Educational guidance. No individualized advice.
+              </span>
+            </div>
+          </div>
 
-    <div className="grid grid-cols-2 gap-3 sm:gap-4">
-      {offers.map((offer) => (
-        <div
-          key={offer.title}
-          className="group min-h-[150px] rounded-2xl border border-white/10 bg-emerald-700/25 p-4 shadow-[0_18px_45px_rgba(0,0,0,0.18)] backdrop-blur-md transition hover:-translate-y-1 hover:border-emerald-300/30 hover:bg-emerald-600/30 sm:min-h-[190px] sm:p-5"
-        >
-          <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg shadow-inner sm:h-11 sm:w-11">
-  <OfferIcon type={offer.icon} />
-</div>
-          <h3 className="text-base font-black text-white sm:text-lg">{offer.title}</h3>
-          <p className="mt-2 hidden text-xs leading-5 text-emerald-50/80 sm:block sm:text-sm sm:leading-6">
-  {offer.desc}
-</p>
-          <p className="mt-4 text-xs font-black text-emerald-300 sm:text-sm">
-  {offer.cta} →
-</p>
+          <div className="rounded-[2rem] border border-white/12 bg-white/[0.08] p-4 shadow-[0_30px_90px_rgba(0,0,0,0.24)] backdrop-blur-md sm:p-6">
+            <div className="flex items-center justify-between border-b border-white/10 pb-5">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-300">Start with the decision</p>
+                <p className="mt-2 text-xl font-black">What are you trying to understand?</p>
+              </div>
+              <span className="hidden rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-bold text-emerald-100 sm:block">
+                3 focus areas
+              </span>
+            </div>
+
+            <div className="mt-4 grid gap-3">
+              {focusAreas.map((area) => (
+                <a href={area.href} key={area.title} className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-[#f7faf6] p-4 text-[#13251d] shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg sm:p-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100">
+                    <FocusIcon type={area.icon} />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-black uppercase tracking-[0.18em] text-emerald-700">{area.label}</p>
+                    <h2 className="mt-1 text-lg font-black sm:text-xl">{area.title}</h2>
+                  </div>
+                  <span className="text-2xl text-emerald-700 transition group-hover:translate-x-1">→</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-   <section className="mx-auto grid max-w-6xl gap-10 px-5 py-10 lg:grid-cols-[1.45fr_0.85fr]">
-  <a href={`/articles/${lead.slug}`} className="block">
-    <img
-  src={lead.image}
-  alt={lead.title}
-  className="h-72 w-full rounded-2xl object-cover shadow-sm"
- />
-    <p className="mt-5 text-xs font-black uppercase tracking-[0.18em] text-green-700">
-      {lead.category}
-    </p>
-    <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight md:text-5xl">
-      {lead.title}
-    </h2>
-    <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600">
-      Timing, taxes, advisor comparisons, and retirement decisions can overlap in ways people often miss.
-    </p>
-    <p className="mt-5 text-sm font-bold text-green-700">Read the guide →</p>
-  </a>
-
-  <div className="space-y-6">
-    <h3 className="border-b border-slate-300 pb-3 mb-4 text-sm font-black uppercase tracking-[0.18em]">
-      Latest Guides
-    </h3>
-
-    {secondary.map((article) => (
-      <a key={article.slug} href={`/articles/${article.slug}`} className="block border-b border-slate-300 pb-6">
-        <p className="text-xs font-black uppercase tracking-[0.16em] text-green-700">
-          {article.category}
-        </p>
-        <h4 className="mt-2 text-2xl font-black leading-tight">
-          {article.title}
-        </h4>
-        <p className="mt-3 text-sm font-bold text-green-700">
-          Read more →
-        </p>
-      </a>
-    ))}
-  </div>
-</section>
-
-<section className="border-y border-slate-200 bg-white">
-  <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-    <div>
-      <p className="text-sm font-black uppercase tracking-[0.18em] text-green-700">
-        Why Trust WalletSaint
-      </p>
-      <h2 className="mt-3 text-4xl font-black leading-tight tracking-tight text-slate-950">
-        Built to make financial decisions easier to compare.
-      </h2>
-      <p className="mt-5 text-base leading-7 text-slate-600">
-  WalletSaint helps readers compare financial options across advisors, retirement strategies, taxes, insurance, debt, and investing. We focus on making complex decisions easier to evaluate before choosing a provider, product, or plan.
-</p>
-    </div>
-
-    <div className="grid gap-4 sm:grid-cols-3">
-      <div className="rounded-2xl border border-green-100 bg-green-50 p-5">
-        <p className="text-3xl font-black text-green-800">6+</p>
-        <p className="mt-2 text-sm font-bold leading-6 text-slate-600">
-          Financial categories covered
-        </p>
-      </div>
-
-      <div className="rounded-2xl border border-green-100 bg-green-50 p-5">
-        <p className="text-3xl font-black text-green-800">Clear</p>
-        <p className="mt-2 text-sm font-bold leading-6 text-slate-600">
-          Educational comparison content
-        </p>
-      </div>
-
-      <div className="rounded-2xl border border-green-100 bg-green-50 p-5">
-        <p className="text-3xl font-black text-green-800">No</p>
-        <p className="mt-2 text-sm font-bold leading-6 text-slate-600">
-          Individualized financial advice
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section className="mx-auto max-w-6xl px-5 py-10">
-  <div className="overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#0b3d2e,#0e4a38_55%,#082c22)] p-6 text-white shadow-2xl md:p-8">
-    <div className="grid gap-6 md:grid-cols-[1.1fr_0.9fr] md:items-center">
-      <div>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-300">
-          Start comparing smarter
-        </p>
-        <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">
-          Review your options before making a financial move.
-        </h2>
-        <p className="mt-4 max-w-2xl text-sm leading-7 text-emerald-50/85">
-          Explore advisor comparisons, retirement planning topics, tax strategy questions, insurance options, debt decisions, and investing guides in one place.
-        </p>
-      </div>
-
-      <div className="rounded-2xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-        <p className="text-sm font-bold text-emerald-100">
-          What are you comparing?
-        </p>
-
-        <div className="mt-4 grid gap-3">
-          <button className="rounded-xl bg-white px-4 py-3 text-left text-sm font-black text-green-900">
-            Financial Advisors →
-          </button>
-          <button className="rounded-xl bg-white/90 px-4 py-3 text-left text-sm font-black text-green-900">
-            Retirement Planning →
-          </button>
-          <button className="rounded-xl bg-white/80 px-4 py-3 text-left text-sm font-black text-green-900">
-            Auto Insurance →
-          </button>
+      <section className="border-b border-[#dce2dc] bg-white">
+        <div className="mx-auto grid max-w-7xl divide-y divide-[#dce2dc] px-5 sm:px-8 md:grid-cols-3 md:divide-x md:divide-y-0">
+          {[
+            ["Focused", "Advisor and retirement decisions"],
+            ["Independent", "Educational comparison content"],
+            ["Straightforward", "Clear questions before next steps"],
+          ].map(([title, description]) => (
+            <div key={title} className="py-6 md:px-7 first:md:pl-0 last:md:pr-0">
+              <p className="text-sm font-black text-[#087443]">{title}</p>
+              <p className="mt-1 text-sm text-slate-600">{description}</p>
+            </div>
+          ))}
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="border-b border-slate-300 pb-3 text-2xl font-black">
-          More From WalletSaint
-        </h2>
+      <section id="guides" className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="mb-8 flex items-end justify-between gap-6 border-b border-[#cfd8d1] pb-5">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#087443]">Featured guidance</p>
+            <h2 className="mt-2 text-3xl font-black tracking-[-0.03em] sm:text-4xl">Questions worth asking before you act.</h2>
+          </div>
+          <p className="hidden max-w-sm text-right text-sm leading-6 text-slate-500 md:block">
+            Practical educational content for people navigating high-stakes retirement decisions.
+          </p>
+        </div>
 
-        <div className="mt-6 grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-[1.45fr_0.85fr]">
+          <a href={"/articles/" + lead.slug} className="group relative min-h-[490px] overflow-hidden rounded-[2rem] bg-[#0b2f22] shadow-[0_22px_60px_rgba(18,51,38,0.16)]">
+            <img src={lead.image} alt={lead.title} className="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-[1.025]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#071d15] via-[#0a3021]/55 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-9">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">{lead.category}</p>
+              <h3 className="mt-3 max-w-3xl text-3xl font-black leading-tight tracking-[-0.03em] sm:text-5xl">{lead.title}</h3>
+              <p className="mt-5 text-sm font-black text-emerald-300">Read the guide →</p>
+            </div>
+          </a>
+
+          <div className="grid gap-4">
+            {secondary.map((article) => (
+              <a key={article.slug} href={"/articles/" + article.slug} className="group grid min-h-[235px] grid-cols-[0.8fr_1.2fr] overflow-hidden rounded-[1.5rem] border border-[#d8dfd9] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+                <img src={article.image} alt={article.title} className="h-full min-h-[235px] w-full object-cover" />
+                <div className="flex flex-col justify-between p-5">
+                  <div>
+                    <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#087443]">{article.category}</p>
+                    <h3 className="mt-3 text-xl font-black leading-tight tracking-[-0.02em]">{article.title}</h3>
+                  </div>
+                  <p className="mt-5 text-sm font-black text-[#087443]">Read more →</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-[#d9e0da] bg-[#e8efe9]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-[#087443]">How WalletSaint helps</p>
+              <h2 className="mt-3 text-4xl font-black leading-tight tracking-[-0.04em] sm:text-5xl">
+                A calmer way to approach complex decisions.
+              </h2>
+              <p className="mt-5 max-w-lg text-base leading-7 text-slate-600">
+                We organize the questions, tradeoffs, and terminology so you can have a more informed conversation with a qualified professional.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              {focusAreas.map((area) => (
+                <article key={area.number} className="rounded-[1.5rem] border border-white/70 bg-white p-6 shadow-sm">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-black tracking-[0.18em] text-emerald-700">{area.number}</span>
+                    <FocusIcon type={area.icon} />
+                  </div>
+                  <h3 className="mt-8 text-xl font-black tracking-[-0.02em]">{area.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{area.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+        <div className="overflow-hidden rounded-[2rem] bg-[#123d2e] text-white shadow-[0_24px_70px_rgba(18,61,46,0.2)]">
+          <div className="grid lg:grid-cols-[1.25fr_0.75fr]">
+            <div className="p-7 sm:p-10 lg:p-12">
+              <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-300">Before your next move</p>
+              <h2 className="mt-4 max-w-3xl text-4xl font-black leading-tight tracking-[-0.04em] sm:text-5xl">
+                Build a clearer picture before choosing an advisor or strategy.
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-7 text-emerald-50/75">
+                Start with the decision in front of you, understand the questions that matter, and compare your available paths.
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-center gap-3 border-t border-white/10 bg-white/[0.06] p-7 sm:p-10 lg:border-l lg:border-t-0">
+              <a href={corporateLinks.advisors} className="rounded-xl bg-emerald-400 px-5 py-4 text-left text-sm font-black text-[#0a3625] transition hover:bg-emerald-300">Financial Advisor Options →</a>
+              <a href={corporateLinks.retirement} className="rounded-xl border border-white/15 bg-white/10 px-5 py-4 text-left text-sm font-black text-white transition hover:bg-white/15">Retirement Planning Questions →</a>
+              <a href={corporateLinks.taxPlanning} className="rounded-xl border border-white/15 bg-white/10 px-5 py-4 text-left text-sm font-black text-white transition hover:bg-white/15">Tax-Aware Planning Guides →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-8">
+        <div className="mb-7 flex items-end justify-between border-b border-[#cfd8d1] pb-4">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-[#087443]">From the editorial desk</p>
+            <h2 className="mt-2 text-3xl font-black tracking-[-0.03em]">More from WalletSaint</h2>
+          </div>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
           {more.map((article) => (
-            <a key={article.slug} href={`/articles/${article.slug}`} className="block">
-              <img
-  src={article.image}
-  alt={article.title}
-  className="h-36 w-full rounded-xl object-cover"
-/>
-              <p className="mt-4 text-xs font-black uppercase tracking-[0.16em] text-green-700">
-                {article.category}
-              </p>
-              <h3 className="mt-2 text-xl font-black leading-tight">
-                {article.title}
-              </h3>
-              <p className="mt-3 text-sm font-bold text-green-700">
-                Read the guide →
-              </p>
+            <a key={article.slug} href={"/articles/" + article.slug} className="group overflow-hidden rounded-[1.5rem] border border-[#d8dfd9] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+              <div className="overflow-hidden">
+                <img src={article.image} alt={article.title} className="h-52 w-full object-cover transition duration-500 group-hover:scale-105" />
+              </div>
+              <div className="p-6">
+                <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#087443]">{article.category}</p>
+                <h3 className="mt-3 text-xl font-black leading-tight tracking-[-0.02em]">{article.title}</h3>
+                <p className="mt-5 text-sm font-black text-[#087443]">Read the guide →</p>
+              </div>
             </a>
           ))}
         </div>
       </section>
 
-      <footer className="border-t border-slate-300 bg-slate-950 px-5 py-12 text-slate-400">
-  <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
+      <footer className="border-t border-slate-800 bg-[#07140f] px-5 py-12 text-slate-400 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.4fr_0.8fr_0.8fr]">
+          <div>
+            <img src="/partners/walletsaint-logo-2026.png" alt="WalletSaint" className="h-11 w-auto rounded-md bg-white px-3 py-1.5" />
+            <p className="mt-5 max-w-md text-sm leading-7">
+              Educational guidance for comparing financial advisors, retirement decisions, and tax-aware planning questions.
+            </p>
+          </div>
 
-    {/* Brand */}
-    <div>
-      <p className="text-lg font-black text-white">WalletSaint</p>
-      <p className="mt-3 text-sm leading-6">
-        Compare financial options across advisors, retirement strategies, tax planning, insurance, debt, and investing before making decisions.
-      </p>
-    </div>
+          <div>
+            <p className="text-sm font-bold text-white">Focus areas</p>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li>
+                <a href={corporateLinks.advisors} className="transition-colors hover:text-white">Financial Advisors</a>
+              </li>
+              <li>
+                <a href={corporateLinks.retirement} className="transition-colors hover:text-white">Retirement Planning</a>
+              </li>
+              <li>
+                <a href={corporateLinks.taxPlanning} className="transition-colors hover:text-white">Tax-Aware Planning</a>
+              </li>
+              <li>
+                <a href="#guides" className="transition-colors hover:text-white">Financial Guides</a>
+              </li>
+            </ul>
+          </div>
 
-    {/* Categories */}
-    <div>
-      <p className="text-sm font-bold text-white">Categories</p>
-      <ul className="mt-3 space-y-2 text-sm">
-        <li>Advisors</li>
-        <li>Retirement</li>
-        <li>Taxes</li>
-        <li>Insurance</li>
-        <li>Debt</li>
-        <li>Investing</li>
-      </ul>
-    </div>
+          <div>
+            <p className="text-sm font-bold text-white">Legal</p>
+            <ul className="mt-4 space-y-3 text-sm">
+              <li><a href="/privacy" className="hover:text-white">Privacy Policy</a></li>
+              <li><a href="/terms" className="hover:text-white">Terms of Use</a></li>
+              <li><a href="/advertiser-disclosure" className="hover:text-white">Advertiser Disclosure</a></li>
+            </ul>
+          </div>
+        </div>
 
-    {/* Resources */}
-    <div>
-      <p className="text-sm font-bold text-white">Resources</p>
-      <ul className="mt-3 space-y-2 text-sm">
-        <li>Financial Guides</li>
-        <li>Comparison Tools</li>
-        <li>Editorial Content</li>
-      </ul>
-    </div>
-
-    {/* Legal */}
-    <div>
-      <p className="text-sm font-bold text-white">Legal</p>
-      <ul className="mt-3 space-y-2 text-sm">
-        <li>
-  <a href="/privacy" className="hover:text-white">
-    Privacy Policy
-  </a>
-</li>
-<li>
-  <a href="/terms" className="hover:text-white">
-    Terms of Use
-  </a>
-</li>
-<li>
-  <a href="/advertiser-disclosure" className="hover:text-white">
-    Advertiser Disclosure
-  </a>
-</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div className="mx-auto mt-10 max-w-6xl border-t border-slate-700 pt-6 text-xs leading-6 text-slate-500">
-    <p>
-      WalletSaint is an educational and comparison platform. We may receive compensation from partners featured on this site. Content is not individualized financial, tax, legal, or investment advice.
-    </p>
-  </div>
-</footer>
+        <div className="mx-auto mt-10 max-w-7xl border-t border-slate-800 pt-6 text-xs leading-6 text-slate-500">
+          <p>
+            WalletSaint is an educational and comparison platform. We may receive compensation from partners featured on this site. Content is not individualized financial, tax, legal, or investment advice.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }

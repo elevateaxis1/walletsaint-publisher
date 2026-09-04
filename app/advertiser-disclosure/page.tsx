@@ -31,13 +31,13 @@ export default function AdvertiserDisclosurePage() {
 
       <p>
         WalletSaint does not provide individualized financial, investment, tax,
-        legal, retirement, or insurance advice. Content is provided for
+        legal, or retirement advice. Content is provided for
         educational and informational purposes only.
       </p>
 
       <p>
         Users should consult qualified professionals before making financial,
-        tax, investment, insurance, or retirement decisions.
+        tax, investment, or retirement decisions.
       </p>
 
       <h2>Advisor Matching</h2>
